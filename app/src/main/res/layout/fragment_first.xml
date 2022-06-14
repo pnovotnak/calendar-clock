@@ -7,9 +7,11 @@
     tools:context=".FirstFragment">
 
     <ListView
-        android:layout_width="409dp"
-        android:layout_height="354dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="89dp" />
+        android:layout_width="414dp"
+        android:layout_height="528dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
