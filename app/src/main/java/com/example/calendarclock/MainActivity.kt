@@ -1,6 +1,7 @@
 package com.example.calendarclock
 
 import android.os.Bundle
+import android.provider.CalendarContract
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -51,3 +52,25 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 }
+
+
+// TODO Calendar stuff
+// See also:
+// - https://developer.android.com/codelabs/build-your-first-android-app-kotlin#3
+// - https://developer.android.com/guide/topics/providers/calendar-provider#kotlin
+
+
+// Projection array. Creating indices for this array instead of doing
+// dynamic lookups improves performance.
+internal val EVENT_PROJECTION: Array<String> = arrayOf(
+    CalendarContract.Calendars._ID,                     // 0
+    CalendarContract.Calendars.ACCOUNT_NAME,            // 1
+    CalendarContract.Calendars.CALENDAR_DISPLAY_NAME,   // 2
+    CalendarContract.Calendars.OWNER_ACCOUNT            // 3
+)
+
+// The indices for the projection array above.
+private const val PROJECTION_ID_INDEX: Int = 0
+private const val PROJECTION_ACCOUNT_NAME_INDEX: Int = 1
+private const val PROJECTION_DISPLAY_NAME_INDEX: Int = 2
+private const val PROJECTION_OWNER_ACCOUNT_INDEX: Int = 3
